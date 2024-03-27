@@ -9,8 +9,15 @@
     "dev": "nodemon src/index.ts",
     "start_dev": "pm2 start ecosystem.config.js --env development",
     "start:prod": "node build/index.js",
-    "build": "rimraf ./build && tsc"
+    "build": "rimraf ./build && tsc",
+    "add-build": "git add build",
+		"ts.check": "tsc --project tsconfig.json"
   },
+	"pre-commit": [
+		"ts.check",
+		"build",
+		"add-build"
+	],
   "keywords": [],
   "author": "",
   "license": "ISC",

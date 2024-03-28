@@ -14,7 +14,9 @@ const app_data_source_1 = require("../app-data-source");
 const permission_entity_1 = require("../entities/permission.entity");
 const role_entity_1 = require("../entities/role.entity");
 const roleSeed = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    yield app_data_source_1.Manager.query("SET FOREIGN_KEY_CHECKS = 0; TRUNCATE table role; SET FOREIGN_KEY_CHECKS = 1;");
+    // await Manager.query("SET FOREIGN_KEY_CHECKS = 0; TRUNCATE table role; SET FOREIGN_KEY_CHECKS = 1;");
+    // await Manager.query(`ALTER TABLE "role" DISABLE TRIGGER ALL; TRUNCATE TABLE "role" CASCADE; ALTER TABLE "role" ENABLE TRIGGER ALL;`);
+    yield app_data_source_1.Manager.query(`TRUNCATE TABLE "role" CASCADE;`);
     // create role permissions
     const permissionRepository = app_data_source_1.Manager.getRepository(permission_entity_1.Permission);
     const allPerms = yield permissionRepository.find();

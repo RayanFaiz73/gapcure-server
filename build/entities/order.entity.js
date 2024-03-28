@@ -46,6 +46,6 @@ __decorate([
     __metadata("design:type", Array)
 ], Order.prototype, "order_items", void 0);
 exports.Order = Order = __decorate([
-    (0, typeorm_1.Entity)(),
-    (0, typeorm_1.Unique)('constraint_name', ['email'])
+    (0, typeorm_1.Entity)()
+    // @Unique('constraint_name', ['email'])
 ], Order);

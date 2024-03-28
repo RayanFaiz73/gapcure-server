@@ -2,7 +2,7 @@ import { BaseEntity, Column, Entity, Unique, PrimaryGeneratedColumn, ManyToOne, 
 import { Order } from "./order.entity";
 
 @Entity ()
-@Unique('constraint_name', ['product_title'])
+// @Unique('constraint_name', ['product_title'])
 export class OrderItem extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number;

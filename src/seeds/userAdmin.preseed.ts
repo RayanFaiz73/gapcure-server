@@ -5,7 +5,9 @@ import bcryptjs from "bcryptjs";
 
 
 export const userAdminSeed = async (req: Request, res: Response) => {
-    await Manager.query("SET FOREIGN_KEY_CHECKS = 0; TRUNCATE table user; SET FOREIGN_KEY_CHECKS = 1;");
+    // await Manager.query("SET FOREIGN_KEY_CHECKS = 0; TRUNCATE table user; SET FOREIGN_KEY_CHECKS = 1;");
+    // await Manager.query(`ALTER TABLE "user" DISABLE TRIGGER ALL; TRUNCATE TABLE "user" CASCADE; ALTER TABLE "user" ENABLE TRIGGER ALL;`);
+    await Manager.query(`TRUNCATE TABLE "user" CASCADE;`);
 
     const repository = Manager.getRepository(User);
     const { ...user } = await repository.save({

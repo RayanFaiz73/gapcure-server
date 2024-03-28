@@ -1,7 +1,7 @@
 import { BaseEntity, Column, Entity, Unique, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity ()
-@Unique('constraint_name', ['title'])
+// @Unique('constraint_name', ['title'])
 export class Product extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number;

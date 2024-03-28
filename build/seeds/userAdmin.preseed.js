@@ -28,7 +28,9 @@ const app_data_source_1 = require("../app-data-source");
 const user_entity_1 = require("../entities/user.entity");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const userAdminSeed = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    yield app_data_source_1.Manager.query("SET FOREIGN_KEY_CHECKS = 0; TRUNCATE table user; SET FOREIGN_KEY_CHECKS = 1;");
+    // await Manager.query("SET FOREIGN_KEY_CHECKS = 0; TRUNCATE table user; SET FOREIGN_KEY_CHECKS = 1;");
+    // await Manager.query(`ALTER TABLE "user" DISABLE TRIGGER ALL; TRUNCATE TABLE "user" CASCADE; ALTER TABLE "user" ENABLE TRIGGER ALL;`);
+    yield app_data_source_1.Manager.query(`TRUNCATE TABLE "user" CASCADE;`);
     const repository = app_data_source_1.Manager.getRepository(user_entity_1.User);
     const user = __rest(yield repository.save({
         firstName: "Admin",

@@ -37,6 +37,6 @@ __decorate([
     __metadata("design:type", Object)
 ], OrderItem.prototype, "order", void 0);
 exports.OrderItem = OrderItem = __decorate([
-    (0, typeorm_1.Entity)(),
-    (0, typeorm_1.Unique)('constraint_name', ['product_title'])
+    (0, typeorm_1.Entity)()
+    // @Unique('constraint_name', ['product_title'])
 ], OrderItem);

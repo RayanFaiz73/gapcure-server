@@ -35,6 +35,6 @@ __decorate([
     __metadata("design:type", Number)
 ], Product.prototype, "price", void 0);
 exports.Product = Product = __decorate([
-    (0, typeorm_1.Entity)(),
-    (0, typeorm_1.Unique)('constraint_name', ['title'])
+    (0, typeorm_1.Entity)()
+    // @Unique('constraint_name', ['title'])
 ], Product);

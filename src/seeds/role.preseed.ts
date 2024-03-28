@@ -5,7 +5,9 @@ import { Role } from '../entities/role.entity'
 
 
 export const roleSeed = async (req: Request, res: Response) => {
-    await Manager.query("SET FOREIGN_KEY_CHECKS = 0; TRUNCATE table role; SET FOREIGN_KEY_CHECKS = 1;");
+    // await Manager.query("SET FOREIGN_KEY_CHECKS = 0; TRUNCATE table role; SET FOREIGN_KEY_CHECKS = 1;");
+    // await Manager.query(`ALTER TABLE "role" DISABLE TRIGGER ALL; TRUNCATE TABLE "role" CASCADE; ALTER TABLE "role" ENABLE TRIGGER ALL;`);
+    await Manager.query(`TRUNCATE TABLE "role" CASCADE;`);
 
     // create role permissions
     const permissionRepository = Manager.getRepository(Permission)

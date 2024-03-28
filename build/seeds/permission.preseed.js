@@ -15,12 +15,16 @@ const permission_entity_1 = require("../entities/permission.entity");
 const permissionSeed = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // await Manager.query("SET FOREIGN_KEY_CHECKS = 0; TRUNCATE table permission; TRUNCATE table role; SET FOREIGN_KEY_CHECKS = 1;");
     const entities = app_data_source_1.Manager.connection.entityMetadatas;
-    yield app_data_source_1.Manager.query("SET FOREIGN_KEY_CHECKS = 0;");
+    // await Manager.query("SET FOREIGN_KEY_CHECKS = 0;");
     for (const entity of entities) {
-        const repository = app_data_source_1.Manager.getRepository(entity.name);
-        yield repository.clear();
+        // console.log(entity.tableName);
+        yield app_data_source_1.Manager.query(`TRUNCATE TABLE "${entity.tableName}" CASCADE;`);
+        // await Manager.query(`ALTER table ${entity.tableName} DISABLE TRIGGER ALL;`);
+        // const repository = Manager.getRepository(entity.name);
+        // await repository.clear();
+        // await Manager.query(`ALTER table ${entity.tableName} ENABLE TRIGGER ALL;`);
     }
-    yield app_data_source_1.Manager.query("SET FOREIGN_KEY_CHECKS = 1;");
+    // await Manager.query("SET FOREIGN_KEY_CHECKS = 1;");
     // create default permissions
     const permissionRepository = app_data_source_1.Manager.getRepository(permission_entity_1.Permission);
     const perms = [

@@ -29,7 +29,7 @@ export const myDataSource = new DataSource(
         // migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
         entities: [process.env.DS_ENTITIES || './build/src/entities/*.{js,ts}'],
         migrations: [process.env.DS_MIGRATIONS || './build/src/migrations/*.{js,ts}'],
-        // synchronize: true,
+        synchronize: true,
         logging: false,
         ssl: true
       }

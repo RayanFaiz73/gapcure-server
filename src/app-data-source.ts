@@ -7,8 +7,10 @@ export const myDataSource = new DataSource({
     username: process.env.DS_USER,
     password: process.env.DS_PASS,
     database: process.env.DS_DB,
-    entities: [process.env.DS_ENTITIES || './src/entities/*.{js,ts}'],
+    // entities: [process.env.DS_ENTITIES || './src/entities/*.{js,ts}'],
     // entities: [__dirname + '/../**/*.entity.{js,ts}'],
+    // entities: [__dirname + '/../**/*.entity.{js,ts}'],
+    entities: ['./src/entities/*.entity.{js,ts}'],
     logging: false,
     synchronize: true,
     multipleStatements:true

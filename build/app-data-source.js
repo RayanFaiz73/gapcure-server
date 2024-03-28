@@ -29,8 +29,8 @@ exports.myDataSource = new typeorm_1.DataSource(
     // entities: ['./src/entities/*.{js,ts}'],
     // entities: [`${__dirname}/**/entities/*.{ts,js}`],
     // migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
-    entities: [process.env.DS_ENTITIES || './src/entities/*.{js,ts}'],
-    migrations: [process.env.DS_MIGRATIONS || './src/migrations/*.{js,ts}'],
+    entities: [process.env.DS_ENTITIES || './build/src/entities/*.{js,ts}'],
+    migrations: [process.env.DS_MIGRATIONS || './build/src/migrations/*.{js,ts}'],
     // synchronize: true,
     logging: false,
     ssl: true

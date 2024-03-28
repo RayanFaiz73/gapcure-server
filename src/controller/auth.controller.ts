@@ -115,7 +115,7 @@ export const Login = async (req: Request, res: Response) => {
                             secure: true, 
                             httpOnly: true, 
                             sameSite: 'none',
-                            domain:"localhost"
+                            domain:"gapcure.vercel.app"
                         })
                             //.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'strict' })
                             //.header('Authorization', accessToken)

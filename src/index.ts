@@ -59,7 +59,7 @@ app.use(express.json());
 // cors for api address/port
 app.use(cors({
     credentials: true,
-    origin: ["http://localhost:3000","https://gapcure.vercel.app","http://localhost:3000","https://gapcure.vercel.app"],
+    origin: ["http://localhost:3000","https://gapcure.vercel.app"],
     methods:['GET','POST','PATCH','PUT','DELETE']
 }));
 

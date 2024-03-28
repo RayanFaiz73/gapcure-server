@@ -124,7 +124,7 @@ const Login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
                             secure: true,
                             httpOnly: true,
                             sameSite: 'none',
-                            // domain:"gapcure.vercel.app"
+                            domain: "localhost"
                         })
                             //.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'strict' })
                             //.header('Authorization', accessToken)

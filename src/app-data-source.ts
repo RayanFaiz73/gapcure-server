@@ -25,8 +25,10 @@ export const myDataSource = new DataSource(
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DATABASE,
         // entities: ['./src/entities/*.{js,ts}'],
-        entities: [`${__dirname}/**/entities/*.{ts,js}`],
-        migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
+        // entities: [`${__dirname}/**/entities/*.{ts,js}`],
+        // migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
+        entities: [process.env.DS_ENTITIES || './src/entities/*.{js,ts}'],
+        migrations: [process.env.DS_MIGRATIONS || './src/migrations/*.{js,ts}'],
         // synchronize: true,
         logging: false,
         ssl: true
